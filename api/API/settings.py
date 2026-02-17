@@ -61,7 +61,7 @@ DATABASES = {
         'NAME': BASE_DIR / os.getenv('DB_NAME', 'db.sqlite3'),
     }
 }
-
+AUTH_USER_MODEL = 'API.Account'
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
