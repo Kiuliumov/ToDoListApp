@@ -13,7 +13,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 # Application definition
-BASE_APPS = []
+BASE_APPS = ['accounts', 'todolist']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,7 +61,7 @@ DATABASES = {
         'NAME': BASE_DIR / os.getenv('DB_NAME', 'db.sqlite3'),
     }
 }
-AUTH_USER_MODEL = 'API.Account'
+AUTH_USER_MODEL = 'accounts.Account'
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -78,6 +78,9 @@ USE_TZ = True
 
 # Static files
 STATIC_URL = 'static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
