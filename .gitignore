@@ -1,2 +1,4 @@
 *.pyc
 api/.env
+*.pyc
+/client/node_modules
