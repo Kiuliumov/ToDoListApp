@@ -42,11 +42,6 @@ export function AuthProvider({ children }) {
   };
 
   const logout = async () => {
-    await fetch("/api/logout", {
-      method: "POST",
-      credentials: "include",
-    });
-
     setUser(null);
   };
 
