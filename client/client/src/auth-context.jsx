@@ -1,3 +1,4 @@
+import { BASE } from "./base_api_url";
 import { createContext, useEffect, useState } from "react";
 
 const AuthContext = createContext(null);
