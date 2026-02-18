@@ -7,5 +7,5 @@ from .models import Todo
 class TodoAdmin(admin.ModelAdmin):
     ...
 
-admin.site.register(TodoAdmin)
+admin.site.register(Todo, TodoAdmin)
 
