@@ -2,3 +2,7 @@
 api/.env
 *.pyc
 /client/node_modules
+*.mjs
+*.ts
+*.mts
+/node_modules
