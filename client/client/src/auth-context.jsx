@@ -11,7 +11,6 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     async function rehydrate() {
       try {
-        // 1️⃣ Refresh access token using refresh cookie
         const refreshRes = await fetch(`${BASE}/api/token/refresh/`, {
           method: "POST",
           credentials: "include",
@@ -24,7 +23,6 @@ export function AuthProvider({ children }) {
 
         setAccessToken(newAccess);
 
-        // 2️⃣ Get user info
         const meRes = await fetch(`${BASE}/api/me/`, {
           headers: {
             Authorization: `Bearer ${newAccess}`,
@@ -58,10 +56,8 @@ export function AuthProvider({ children }) {
 
     const data = await res.json();
 
-    // simplejwt returns access + refresh
     setAccessToken(data.access);
 
-    // Fetch user after login
     const meRes = await fetch(`${BASE}/api/me/`, {
       headers: {
         Authorization: `Bearer ${data.access}`,
